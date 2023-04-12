@@ -1,0 +1,96 @@
+-- To create database "IMDB"
+
+-- create database imdb
+
+-- if we want work in "imdb" database
+-- use imdb
+
+--1. Movie should have multiple media(Video or Image) 
+-- create table movie(
+--     id int  not null auto_increment,
+--     movie_name varchar(255) not null,
+--     released_year varchar(255) not null,
+--     duration varchar(255) not null,
+--     director varchar(255) not null,
+--     stars varchar(500) not null,
+--     createdAt timestamp default current_timestamp,
+--     updatedAt timestamp on update current_timestamp,
+--     primary key(id)
+--  )
+
+-- insert the values into "movie" table
+
+--insert into Movie(movie_name,released_year,duration,director,stars)
+--  values('A Bug's Life', '2020','2.45 Hrs', 'John Lasseter', 'John, Nikki, joes'),
+--  ('WALL-E', '2022', '2.35 Hrs', 'Andrew Stanton', 'Lasseter', 'Doe', 'Stanley')
+
+--  select * from Movie
+
+-- 2. Movie can belongs to multiple Genre
+
+-- create table genre(
+-- id int not null auto_increment,
+-- g_id int,
+-- genre varchar(255),
+-- primary key(id),
+-- foreign key(g_id) 
+-- )
+
+-- insert the values into "genre" table
+
+-- insert into genre(g_id,genre) values(1,'Action, Emotional, Adventure, Thriller'),
+-- (2,'Action, Horror, Drama, Comedy')
+
+-- select * from genre
+
+-- 3. Movie can have multiple reviews and Review can belongs to a user
+-- create table Reviews(
+-- id int not null auto_increment,
+-- user_id int,
+-- user_name varchar(255) not null,
+-- rating int not null,
+-- primary key(id),
+-- foreign key(user_id) 
+-- )
+
+-- insert into Reviews(user_id,user_name,rating) values(1,'Ravi',8),
+-- (2,'Raja',9);
+
+-- select * from Reviews
+
+
+-- 4. Artist can have multiple skills
+
+-- create table Skills(
+-- id int not null auto_increment,
+-- Artist_id int,
+-- Artist_name varchar(255),
+-- Skills varchar(255),
+-- primary key(id),
+-- foreign key(Artist_id) 
+-- )
+
+-- insert into Skills(Artist_id,Artist_name,Skills) values(1, 'Dhanush','Actor,Director,producer,Singer,'),
+-- (2, 'Ajith','Actor,Producer,Singer')
+
+-- select * from Skills
+
+
+--  5. Artist can perform multiple role in a single film
+
+-- create table Role(
+-- id int not null auto_increment,
+-- Artist_id int,
+-- Artist_name varchar(255),
+-- movie_name varchar(255),
+-- role varchar(255),
+-- primary key(id),
+-- foreign key(Artist_id) 
+-- )
+
+
+--  insert into Role(Artist_id,Artist_name,movie_name,role) 
+--  values(1,'Rajinikanth','Sivaji','Actor, producer')
+--  ,(2,'Kamal','Vikram','Actor,director')
+
+-- select * from Role
